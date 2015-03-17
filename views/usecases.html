@@ -1,67 +1,66 @@
-﻿
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-11">
-          <div class="panel panel-default">
+﻿<div class="container">
+<div class="row">
+    <div class="col-lg-11">
+        <div class="panel panel-default">
             <div class="panel-body">
-              <div class="page-header">
-                <h1>FRAIL's Use Cases</h1>
-              </div>
-              <h2 id="1">Didactics</h2>
-			  <p align="justify">FRAIL can be used for didactics purpose. Students who participate in classes involving FRAIL, can learn how to prototype NPC in multi-agent systems like computer games or how specific methods of controlling NPC works. Other purposes may involve conducting artificial intelligence experiments in real-time, multi-agent systems provided by FRAIL.</p>
-			  <p align="justify">FRAIL was already used in didactics at Wroclaw University of Technology at faculty of Computer Science and Management - <a href="http://www.ii.pwr.edu.pl/">http://www.ii.pwr.edu.pl/</a>. The main goal was to teach the students how to use planning methods in problem solving process and to introduce them to a small part of computer game development. Students had to get familiar with FRAIL, behaviour tree (BT), finite-state machine (FSM) and hierarchical task network (HTN) methods. Official FRAIL version, available on GitHUB - <a href="https://github.com/frailpwr/frail_pwr">https://github.com/frailpwr/frail_pwr</a>, was used in this exercise.</p>
-			  <h3>Details</h3>
-			  <p align="justify">Students had to create NPC which was later confronted with FRAIL's reference boss. They used methods of controlling artificial characters available in FRAIL. The winner was the character which won the duel by killing its opponent.</p>
-			  <p align="justify">A special game map was created for exercise purposes. It consisted of dynamic, interactive objects like exploding barrels, medical kits, etc. and static objects which referred to the sculpture of the map, like pillars and walls.</p>
-			  <center><img class="featuredImg" src="images/site/arena.png" id="4"/></center>
-			  <p align="justify">The simple map scheme is presented above. Red dots refer to spawn points, violet dots are exploding barrels, light green dot represent medical kit position, dark green is a double damage buff spot, the cyan circle refers to healing pool, the biggest yellow circle is the available moving region and the black squares represent pillars.</p>
-			  <p align="justify">AI-controlled characters standing opposite each other tried to kill their opponent by using their unique tactics. Every character could dodge attacks, move all over the arena, attack using three different attack types and interact with the environment. AI characters had knowledge of only a small part of the world state, which contained every data available in game. Based on the mentioned, partial data they had to execute appropriate action, according to author's design.</p>
-			  <p align="justify">The whole exercise was separated into a few smaller tasks. First task realization was rewarded with 2 points and involved NPC implementation using finite-state machine method. Second task involved hierarchical task network or behaviour tree. Students could choose one method and create NPC according to it. The second task was rewarded with 4 points. Third task encouraged students to create new NPC actions, like new attacks, dodges, movement styles, etc. It was rewarded with 2 points. Last two tasks referred to students' reports in which they had to describe and examine methods they worked with. Those two tasks were rewarded 1 point each and concerned both used methods effectiveness.</p>
-			  <h2 id="2">Tournament</h2>
-			  <p align="justify">Although FRAIL provides a great way of acquiring knowledge it also brings some entertainment. It was already used for the tournament, announced at Wroclaw University of Technology at Faculty of Computer Science and Management in 2014.</p>
-			  <p align="justify">Students who participated in exercise which concerned FRAIL, were allowed to join the competition. Those who wished to join the tournament, had to send an email message with zip archive file attached. The archive had to include NPC's XML logic model, NPC's documentation created by its author, *.cpp and *.h files referring to NPC code used in FRAIL and other essential files needed to use the NPC in FRAIL.</p>
-			  <p align="jusify">FRAIL's tournament was conducted using FRAIL in the special, stripped version available at GitHUB - <a href="https://github.com/frailpwr/frail_pwr/tree/tournament">https://github.com/frailpwr/frail_pwr/tree/tournament</a>. This version provided only one, <a href="#/usecases/#4">the official tournament map</a>, the same which was used in exercise mentioned in <a href="#/usecases/#1">Didactics</a> section.</p>
-			  <p align="justify">The FRAIL tournament's was prepared to emerge the best NPC. The tournament was an all-play-all tournament type, which involved duel between all submitted NPCs. All duels were recorded and are available on YouTube website - <a href="https://www.youtube.com/playlist?list=PL8vXotgarpc7TOfDDh3kfhAWB0wIVydhG">here</a>.</p>
-			  <center><iframe width="560" height="315" src="http://www.youtube.com/embed/0d2Sn8qCa1w" frameborder="0" allowfullscreen=""></iframe></center>
-			  <p align="justify">The winner is the character which collected the highest score. Every duel lasted 2 minutes or ended earlier if one fighting NPC won. The score was calculated using simple formula:</p>
-			  <center>score = dmgDone - dmgTaken + 1000 * win</center><br/>
-			  <p align="justify">Score is the equation's outcome which involves damage dealt to the enemy (dmgDone), damage taken from enemy's attacks (dmgTaken) and win flag which equals 1, when the duel was won or 0, when the duel was lost.</p>
-			  <p align="justify">To make the tournament fair some restrictions had to be introduced. The restrictions concerned especially actions which affected final score and duel's gameplay. Default NPC configuration was:</p>
-			  <ul>
-			  <li>Damage - melee: 30</li>
-			  <li>Damage - fireball: 15</li>
-			  <li>Damage - anger mode: 30</li>
-			  <li>Maximum health points: 200</li>
-			  <li>Initial health points: 200</li>
-			  <li>Maximum movement speed: 0.05</li>
-			  <li>Animation duration for fireball attack (ms): 550</li>
-			  <li>Animation duration for melee attack (ms): 650</li>
-			  <li>Animation duration for anger mode attack (ms): 1000</li>
-			  <li>Minimum fireball attack action duration (ms): 600</li>
-			  <li>Minimum melee attack action duration (ms): 1200</li>
-			  <li>Minimum anger mode attack action duration (ms): 1200</li>
-			  </ul>
-			  <p align="justify">Three attack types were available:</p>
-			  <ul>
-			  <li>Near range attack (melee)</li>
-			  <li>Long range attack (fireball)</li>
-			  <li>High jump attack (anger mode)</li>
-			  </ul>
-			  <p align="justify">Any other attacks were recognized as a violation. Every attack type had to be implemented with corresponding animation.</p>
-			  <h3>Result</h3>
-			  <p align="justify">Students submitted ten NPCs to the FRAIL tournament. Three of them who won 1st, 2nd and 3rd places were rewarded with extra points and computer games provided by <a href="http://www.techland.pl">Techland</a> company.</p>
-			  <p align="justify">The scoreboard is presented below.</p>
-			  <center><a href="images/site/tournament.PNG"><img class="featuredImg" src="images/thumbnails/tournament.PNG"/></a></center>
-			  <p align="justify">Header row and column in the scoreboard represent NPCs with their names included as values of cells. Columns in their cells hold values equal to points collected/lost by NPC specified in the header cell. Values in rows represent collected/lost points by the enemy in reference to the current NPC, identified with name presented in header row.</p>
-			  <p align="justify">NPCs with 0 score are NPCs which were banned from the tournament due to violations.</p>
-			  <p align="justify">All NPCs, their source code, special version of FRAIL for tournament purpose are available on FRAIL's <a href="https://github.com/frailpwr/frail_pwr/tree/tournament">GitHUB repository</a> in tournament branch. Duels were recorded and uploaded on <a href="https://www.youtube.com/playlist?list=PL8vXotgarpc7TOfDDh3kfhAWB0wIVydhG">YouTube</a>.</p>
+                <div class="page-header">
+                    <h1>FRAIL's Use Cases</h1>
+                </div>
+                <h2 id="1">Didactics</h2>
+                <p align="justify">FRAIL can be used for didactics purpose. Students who participate in classes involving FRAIL, can learn how to prototype NPC in multi-agent systems like computer games or how specific methods of controlling NPC works. Other purposes may involve conducting artificial intelligence experiments in real-time, multi-agent systems provided by FRAIL.</p>
+                <p align="justify">FRAIL was already used in didactics at Wroclaw University of Technology at faculty of Computer Science and Management - <a href="http://www.ii.pwr.edu.pl/">http://www.ii.pwr.edu.pl/</a>. The main goal was to teach the students how to use planning methods in problem solving process and to introduce them to a small part of computer game development. Students had to get familiar with FRAIL, behaviour tree (BT), finite-state machine (FSM) and hierarchical task network (HTN) methods. Official FRAIL version, available on GitHUB - <a href="https://github.com/frailpwr/frail_pwr">https://github.com/frailpwr/frail_pwr</a>, was used in this exercise.</p>
+                <h3>Details</h3>
+                <p align="justify">Students had to create NPC which was later confronted with FRAIL's reference boss. They used methods of controlling artificial characters available in FRAIL. The winner was the character which won the duel by killing its opponent.</p>
+                <p align="justify">A special game map was created for exercise purposes. It consisted of dynamic, interactive objects like exploding barrels, medical kits, etc. and static objects which referred to the sculpture of the map, like pillars and walls.</p>
+                <center><img class="featuredImg" src="images/site/arena.png" id="4"/></center>
+                <p align="justify">The simple map scheme is presented above. Red dots refer to spawn points, violet dots are exploding barrels, light green dot represent medical kit position, dark green is a double damage buff spot, the cyan circle refers to healing pool, the biggest yellow circle is the available moving region and the black squares represent pillars.</p>
+                <p align="justify">AI-controlled characters standing opposite each other tried to kill their opponent by using their unique tactics. Every character could dodge attacks, move all over the arena, attack using three different attack types and interact with the environment. AI characters had knowledge of only a small part of the world state, which contained every data available in game. Based on the mentioned, partial data they had to execute appropriate action, according to author's design.</p>
+                <p align="justify">The whole exercise was separated into a few smaller tasks. First task realization was rewarded with 2 points and involved NPC implementation using finite-state machine method. Second task involved hierarchical task network or behaviour tree. Students could choose one method and create NPC according to it. The second task was rewarded with 4 points. Third task encouraged students to create new NPC actions, like new attacks, dodges, movement styles, etc. It was rewarded with 2 points. Last two tasks referred to students' reports in which they had to describe and examine methods they worked with. Those two tasks were rewarded 1 point each and concerned both used methods effectiveness.</p>
+                <h2 id="2">Tournament</h2>
+                <p align="justify">Although FRAIL provides a great way of acquiring knowledge it also brings some entertainment. It was already used for the tournament, announced at Wroclaw University of Technology at Faculty of Computer Science and Management in 2014.</p>
+                <p align="justify">Students who participated in exercise which concerned FRAIL, were allowed to join the competition. Those who wished to join the tournament, had to send an email message with zip archive file attached. The archive had to include NPC's XML logic model, NPC's documentation created by its author, *.cpp and *.h files referring to NPC code used in FRAIL and other essential files needed to use the NPC in FRAIL.</p>
+                <p align="jusify">FRAIL's tournament was conducted using FRAIL in the special, stripped version available at GitHUB - <a href="https://github.com/frailpwr/frail_pwr/tree/tournament">https://github.com/frailpwr/frail_pwr/tree/tournament</a>. This version provided only one, <a href="#/usecases/#4">the official tournament map</a>, the same which was used in exercise mentioned in <a href="#/usecases/#1">Didactics</a> section.</p>
+                <p align="justify">The FRAIL tournament's was prepared to emerge the best NPC. The tournament was an all-play-all tournament type, which involved duel between all submitted NPCs. All duels were recorded and are available on YouTube website - <a href="https://www.youtube.com/playlist?list=PL8vXotgarpc7TOfDDh3kfhAWB0wIVydhG">here</a>.</p>
+                <center><iframe width="560" height="315" src="http://www.youtube.com/embed/0d2Sn8qCa1w" frameborder="0" allowfullscreen=""></iframe></center>
+                <p align="justify">The winner is the character which collected the highest score. Every duel lasted 2 minutes or ended earlier if one fighting NPC won. The score was calculated using simple formula:</p>
+                <center>score = dmgDone - dmgTaken + 1000 * win</center><br/>
+                <p align="justify">Score is the equation's outcome which involves damage dealt to the enemy (dmgDone), damage taken from enemy's attacks (dmgTaken) and win flag which equals 1, when the duel was won or 0, when the duel was lost.</p>
+                <p align="justify">To make the tournament fair some restrictions had to be introduced. The restrictions concerned especially actions which affected final score and duel's gameplay. Default NPC configuration was:</p>
+                <ul>
+                    <li>Damage - melee: 30</li>
+                    <li>Damage - fireball: 15</li>
+                    <li>Damage - anger mode: 30</li>
+                    <li>Maximum health points: 200</li>
+                    <li>Initial health points: 200</li>
+                    <li>Maximum movement speed: 0.05</li>
+                    <li>Animation duration for fireball attack (ms): 550</li>
+                    <li>Animation duration for melee attack (ms): 650</li>
+                    <li>Animation duration for anger mode attack (ms): 1000</li>
+                    <li>Minimum fireball attack action duration (ms): 600</li>
+                    <li>Minimum melee attack action duration (ms): 1200</li>
+                    <li>Minimum anger mode attack action duration (ms): 1200</li>
+                </ul>
+                <p align="justify">Three attack types were available:</p>
+                <ul>
+                    <li>Near range attack (melee)</li>
+                    <li>Long range attack (fireball)</li>
+                    <li>High jump attack (anger mode)</li>
+                </ul>
+                <p align="justify">Any other attacks were recognized as a violation. Every attack type had to be implemented with corresponding animation.</p>
+                <h3>Result</h3>
+                <p align="justify">Students submitted ten NPCs to the FRAIL tournament. Three of them who won 1st, 2nd and 3rd places were rewarded with extra points and computer games provided by <a href="http://www.techland.pl">Techland</a> company.</p>
+                <p align="justify">The scoreboard is presented below.</p>
+                <center><a href="images/site/tournament.PNG"><img class="featuredImg" src="images/thumbnails/tournament.PNG"/></a></center>
+                <p align="justify">Header row and column in the scoreboard represent NPCs with their names included as values of cells. Columns in their cells hold values equal to points collected/lost by NPC specified in the header cell. Values in rows represent collected/lost points by the enemy in reference to the current NPC, identified with name presented in header row.</p>
+                <p align="justify">NPCs with 0 score are NPCs which were banned from the tournament due to violations.</p>
+                <p align="justify">All NPCs, their source code, special version of FRAIL for tournament purpose are available on FRAIL's <a href="https://github.com/frailpwr/frail_pwr/tree/tournament">GitHub repository</a> in tournament branch. Duels were recorded and uploaded on <a href="https://www.youtube.com/playlist?list=PL8vXotgarpc7TOfDDh3kfhAWB0wIVydhG">YouTube</a>.</p>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="col-xs-6 col-sm-3 sidebar-offcanvas sidebar-nav" id="sidebar" role="navigation">
-        <div class="list-group">
+    </div>
+</div>
+<div class="col-xs-6 col-sm-3 sidebar-offcanvas sidebar-nav" id="sidebar" role="navigation">
+    <div class="list-group">
         <a href="#/usecases/#1" class="list-group-item">Didactics</a> 
         <a href="#/usecases/#2" class="list-group-item">Tournament</a> 
-      </div>
     </div>
+</div>
