@@ -1,4 +1,4 @@
-var app = angular.module(siteApp,[
+var app = angular.module("siteApp",[
         "ngRoute"
 ]);
 
