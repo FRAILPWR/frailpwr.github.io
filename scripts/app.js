@@ -2,7 +2,7 @@ var app = angular.module(siteApp,[
         "ngRoute"
 ]);
 
-app.config([$routeProvider, function($routeProvider {
+app.config([$routeProvider, function($routeProvider) {
     $routeProvider
         .when("/",{templateUrl:"views/main.html"}
              )
@@ -30,7 +30,7 @@ app.config([$routeProvider, function($routeProvider {
              )
         .otherwise({redirectTo:"/"}
                 )
-})]);
+}]);
 app.controller("MainCtrl",["$scope","$location",function(a,b) {
     a.isActive = function(a) {return a === b.path()}
 }
