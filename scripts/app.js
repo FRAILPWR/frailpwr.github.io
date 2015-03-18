@@ -1,7 +1,4 @@
 var app = angular.module(siteApp,[
-        "ngCookies",
-        "ngResource",
-        "ngSanitize",
         "ngRoute"
 ]);
 
