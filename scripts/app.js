@@ -1,7 +1,11 @@
 "use strict";
 var app = angular.module("siteApp",[
+<<<<<<< HEAD
         'ngRoute'
         , 'ui.bootstrap'
+=======
+        "ngRoute"
+>>>>>>> master
 ]);
 
 app.config(function($routeProvider) {
