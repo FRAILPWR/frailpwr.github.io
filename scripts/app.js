@@ -1,5 +1,6 @@
+"use strict";
 var app = angular.module("siteApp",[
-        "ngRoute"
+        'ngRoute'
         , 'ui.bootstrap'
 ]);
 
